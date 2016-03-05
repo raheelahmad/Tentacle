@@ -9,4 +9,4 @@ before_script:
   - carthage bootstrap --use-submodules --no-build
 script: 
   - xctool -workspace Tentacle.xcworkspace -scheme Tentacle test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
-  - xctool -workspace Tentacle.xcworkspace -scheme TentacleiOS test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
+  - xctool -workspace Tentacle.xcworkspace -scheme TentacleiOS -sdk iphonesimulator test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=

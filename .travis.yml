@@ -2,11 +2,11 @@ language: objective-c
 notifications:
   email: false
 osx_image: xcode7.2
-xcode_workspace: Tentacle.xcworkspace
-xcode_scheme: Tentacle
 before_install:
   - brew update
   - brew upgrade carthage
 before_script:
   - carthage bootstrap --use-submodules --no-build
-script: xctool -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
+script: 
+  - xctool -workspace Tentacle.xcworkspace -scheme Tentacle test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
+  - xctool -workspace Tentacle.xcworkspace -scheme TentacleiOS test CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
